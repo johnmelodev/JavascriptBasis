@@ -1,0 +1,11 @@
+Class: General Plan [Model, Brand, Color]
+
+- A class is like a model or plan.
+- Imagine you are planning to create a car. What does a car usually have? It has a model, a brand, a color, etc. These are the characteristics that all cars have in common.
+- So, the class is like the plan to create a car. It defines which characteristics (or properties) a car should have.
+
+Objects: Specific Plan for a Specific Product [Ford, BMW, Mercedes]
+
+- An object is an instance of a class. Using the example of the car, an object would be a specific car.
+- For example, a "BMW X5" is a car. It has a model ("X5"), a brand (BMW), a color (let's say, black), etc. These are the specific properties of that car.
+- Therefore, the "BMW X5" is an object of the class "Car". It is a specific instance of a car that was created using the plan (class) we defined.
