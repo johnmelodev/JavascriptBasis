@@ -1,8 +1,0 @@
-git init
-create a file
-git add . 
-git commit -m "filename"
-git remote add origin git@github:johnmelodev/repositoryname.
-SSH pattern.
-git push -u origin master. 
-**If I get an error message, try replacing master with main.**

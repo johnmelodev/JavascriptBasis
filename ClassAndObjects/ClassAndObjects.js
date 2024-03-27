@@ -19,6 +19,7 @@ let indexDeAluno = 0;
 while (continuar) {
     let nome = prompt('Insira o nome do aluno');
     let idade = parseInt(prompt('Insira a idade do aluno'));
+    // Criando um objeto com base com o que é inserido
     let aluno = new Aluno(nome, idade);
 
     let areaAtuacao = prompt('Insira a área de atuação do aluno');
