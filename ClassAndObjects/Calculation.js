@@ -1,50 +1,52 @@
-class Carro {
-    constructor(nome, velocidadeMaxima, potencia, consumo) {
-        this.nome = nome;
-        this.velocidadeMaxima = velocidadeMaxima;
-        this.potencia = potencia;
-        this.consumo = consumo;
+// CREATING CAR CLASS
+class Car {
+    constructor(name, maxSpeed, power, consumption) {
+        this.name = name;
+        this.maxSpeed = maxSpeed;
+        this.power = power;
+        this.consumption = consumption;
     }
 
-    CalcularTempoMedio(distancia) {
-        // Implemente este método para calcular o tempo médio do carro para percorrer a distância fornecida
-        return distancia / this.velocidadeMaxima;
+    CalculateAverageTime(distance) {
+        // Implement this method to calculate the car's average time to cover the provided distance
+        return distance / this.maxSpeed;
     }
 }
 
-class Corrida {
-    constructor(nome, tipo, distancia) {
-        this.Nome = nome;
-        this.Tipo = tipo;
-        this.Distancia = distancia;
-        this.Vencedor = "";
-        this.Participantes = [];
+// CREATING RACE CLASS
+class Race {
+    constructor(name, type, distance) {
+        this.Name = name;
+        this.Type = type;
+        this.Distance = distance;
+        this.Winner = "";
+        this.Participants = [];
     }
 
-    DefinirVencedor() {
-        let menorTempo = this.Participantes[0].CalcularTempoMedio(this.Distancia);
-        let vencedor = this.Participantes[0];
+    DefineWinner() {
+        let shortestTime = this.Participants[0].CalculateAverageTime(this.Distance);
+        let winner = this.Participants[0];
 
-        for (let index = 1; index < this.Participantes.length; index++) {
-            let tempo = this.Participantes[index].CalcularTempoMedio(this.Distancia);
-            if (tempo < menorTempo) {
-                menorTempo = tempo;
-                vencedor = this.Participantes[index];
+        for (let index = 1; index < this.Participants.length; index++) {
+            let time = this.Participants[index].CalculateAverageTime(this.Distance);
+            if (time < shortestTime) {
+                shortestTime = time;
+                winner = this.Participants[index];
             }
         }
-        return this.Vencedor = vencedor;
+        return this.Winner = winner;
     }
 
-    ExibirVencedor() {
-        alert("O vencedor é: " + this.Vencedor.nome);
+    DisplayWinner() {
+        alert("The winner is: " + this.Winner.name);
     }
 }
 
-let corrida = new Corrida("Monza", "Formula 1", 60000);
+let race = new Race("Monza", "Formula 1", 60000);
 
-corrida.Participantes[0] = new Carro("Kicks", 120, 160, 5);
-corrida.Participantes[1] = new Carro("Marea", 210, 200, 9);
-corrida.Participantes[2] = new Carro("Peugeot", 300, 220, 10);
+race.Participants[0] = new Car("Kicks", 120, 160, 5);
+race.Participants[1] = new Car("Marea", 210, 200, 9);
+race.Participants[2] = new Car("Peugeot", 300, 220, 10);
 
-corrida.DefinirVencedor();
-corrida.ExibirVencedor();
+race.DefineWinner();
+race.DisplayWinner();

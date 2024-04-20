@@ -1,36 +1,35 @@
-class Aluno {
-    constructor(nome, idade) {
-        this.nome = nome;
-        this.idade = idade;
+// CREATING STUDENT CLASS
+class Student {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
 
-    apresentar() {
-        console.log("Olá, meu nome é: " + this.nome + "minha idade: " + this.idade + "e minha area de atuação é: " + this.areaAtuacao)
+    introduce() {
+        console.log("Hello, my name is: " + this.name + " my age is: " + this.age + " and my area of expertise is: " + this.areaOfExpertise)
     }
-
-
 }
 
-console.log("======= Cadastro de alunos =======");
-let alunos = [];
-let continuar = true;
-let indexDeAluno = 0;
+console.log("======= Student Registration =======");
+let students = [];
+let continueLoop = true;
+let studentIndex = 0;
 
-while (continuar) {
-    let nome = prompt('Insira o nome do aluno');
-    let idade = parseInt(prompt('Insira a idade do aluno'));
-    // Criando um objeto com base com o que é inserido
-    let aluno = new Aluno(nome, idade);
+while (continueLoop) {
+    let name = prompt('Enter the student name');
+    let age = parseInt(prompt('Enter the student age'));
+    // Creating an object based on what is entered
+    let student = new Student(name, age);
 
-    let areaAtuacao = prompt('Insira a área de atuação do aluno');
-    aluno.areaAtuacao = areaAtuacao;
+    let areaOfExpertise = prompt('Enter the student area of expertise');
+    student.areaOfExpertise = areaOfExpertise;
 
-    alunos[indexDeAluno] = aluno;
-    let desejaContinuar = prompt('Insira 1 caso deseje cadastrar um novo aluno');
-    if (desejaContinuar != "1") {
-        continuar = false;
+    students[studentIndex] = student;
+    let wishToContinue = prompt('Enter 1 if you wish to register a new student');
+    if (wishToContinue != "1") {
+        continueLoop = false;
     }
     else {
-        indexDeAluno++
+        studentIndex++
     }
 }

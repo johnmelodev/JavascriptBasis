@@ -1,66 +1,66 @@
-// CRIANDO CLASSE LIVRO
-class Livro {
-    constructor(titulo, autor, editora, anoDePublicacao) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.editora = editora;
-        this.anoDePublicacao = anoDePublicacao;
-        this.disponibilidade = true;
+// CREATING BOOK CLASS
+class Book {
+    constructor(title, author, publisher, publicationYear) {
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.publicationYear = publicationYear;
+        this.availability = true;
     }
 }
 
-// CRIANDO CLASSE BIBLIOTECA
-class Biblioteca {
-    constructor(nome, telefone, endereco, acervo) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.acervoLivros = acervo || [];
+// CREATING LIBRARY CLASS
+class Library {
+    constructor(name, phone, address, collection) {
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.bookCollection = collection || [];
     }
 
-    buscarLivroPeloTitulo(titulo) {
-        this.acervoLivros.forEach(livro => {
-            if (livro.titulo === titulo) {
-                console.log(livro);
+    searchBookByTitle(title) {
+        this.bookCollection.forEach(book => {
+            if (book.title === title) {
+                console.log(book);
             }
         });
     }
 
-    emprestarLivro(titulo) {
-        let emprestado = false;
-        this.acervoLivros.forEach(livro => {
-            if (livro.titulo === titulo && livro.disponibilidade === true) {
-                livro.disponibilidade = false;
-                emprestado = true;
+    lendBook(title) {
+        let lent = false;
+        this.bookCollection.forEach(book => {
+            if (book.title === title && book.availability === true) {
+                book.availability = false;
+                lent = true;
             }
         });
-        if (!emprestado) {
-            console.log("Livro não disponível para empréstimo.");
+        if (!lent) {
+            console.log("Book not available for lending.");
         }
-        return emprestado;
+        return lent;
     }
 
-    devolverLivro(titulo) {
-        this.acervoLivros.forEach(livro => {
-            if (livro.titulo === titulo) {
-                livro.disponibilidade = true;
-                console.log("Livro devolvido");
+    returnBook(title) {
+        this.bookCollection.forEach(book => {
+            if (book.title === title) {
+                book.availability = true;
+                console.log("Book returned");
             }
         });
     }
 }
 
-// CRIANDO OBJETOS DA CLASSE LIVRO
-let livros = [
-    new Livro("livro1", "Marcos", "editora A", 2001),
-    new Livro("livro2", "Marcos", "editora F", 1997),
-    new Livro("livro3", "Carlos", "editora F", 2010),
-    new Livro("livro4", "João", "editora A", 2005),
-    new Livro("livro5", "Fábio", "editora C", 2020)
+// CREATING OBJECTS OF THE BOOK CLASS
+let books = [
+    new Book("book1", "Marcos", "publisher A", 2001),
+    new Book("book2", "Marcos", "publisher F", 1997),
+    new Book("book3", "Carlos", "publisher F", 2010),
+    new Book("book4", "João", "publisher A", 2005),
+    new Book("book5", "Fábio", "publisher C", 2020)
 ];
 
-let biblioteca = new Biblioteca("Biblioteca DoDev", "123456", "Rua 2", livros);
+let library = new Library("DoDev Library", "123456", "Street 2", books);
 
-biblioteca.buscarLivroPeloTitulo("livro2");
-biblioteca.emprestarLivro("livro1");
-biblioteca.devolverLivro("livro1");
+library.searchBookByTitle("book2");
+library.lendBook("book1");
+library.returnBook("book1");

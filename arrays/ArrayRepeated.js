@@ -1,29 +1,29 @@
-// Declarando arrays que vamos utilizar
+// Declaring arrays that we will use
 let arrayA = [13, 20, 10, 22, 24, 20, 27, 17, 19, 14];
 let arrayB = [24, 22, 23, 11, 15, 17, 29, 14, 16, 21];
 
-// Declarando a função com os parâmetros pedidos
-function AcharNumerosEmComum(arrayUm, arrayDois) {
-    let resultado = []; // Declarando array de números em comum
-    let contadorResultado = 0; // contador desse array
+// Declaring the function with the requested parameters
+function FindCommonNumbers(arrayOne, arrayTwo) {
+    let result = []; // Declaring array of common numbers
+    let resultCounter = 0; // counter for this array
 
-    // O primeiro FOR percorre o arrayUm
-    for (let i = 0; i < arrayUm.length; i++) {
-        // O segundo FOR percorre o arrayDois, para cada número de arrayUm ele
-        // compara com todos os números de arrayDois
-        for (let j = 0; j < arrayDois.length; j++) {
-            // Se a comparação for bem sucedida ele adiciona esse número no array de
-            // números em comum e atribui o valor máximo ao contador j assim encerrando
-            // a verificação para esse número e evitando números duplicados
-            if (arrayUm[i] == arrayDois[j]) {
-                resultado[contadorResultado] = arrayUm[i];
-                contadorResultado++;
-                j = arrayDois.length;
+    // The first FOR loop goes through arrayOne
+    for (let i = 0; i < arrayOne.length; i++) {
+        // The second FOR loop goes through arrayTwo, for each number of arrayOne it
+        // compares with all the numbers of arrayTwo
+        for (let j = 0; j < arrayTwo.length; j++) {
+            // If the comparison is successful it adds this number to the array of
+            // common numbers and assigns the maximum value to the j counter thus ending
+            // the verification for this number and avoiding duplicate numbers
+            if (arrayOne[i] == arrayTwo[j]) {
+                result[resultCounter] = arrayOne[i];
+                resultCounter++;
+                j = arrayTwo.length;
             }
         }
     }
 
-    return resultado;
+    return result;
 }
 
-console.log(AcharNumerosEmComum(arrayA, arrayB));
+console.log(FindCommonNumbers(arrayA, arrayB));

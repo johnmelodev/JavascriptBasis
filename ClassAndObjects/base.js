@@ -1,11 +1,11 @@
-// Criando a classe Carro
-class Carro {
-    constructor(modelo, marca, cor) {
-        this.Modelo = modelo;
-        this.Marca = marca;
-        this.Cor = cor;
+// Creating the Car class
+class Car {
+    constructor(model, brand, color) {
+        this.Model = model;
+        this.Brand = brand;
+        this.Color = color;
     }
 }
 
-// Criando um objeto carro
-let carro = new Carro("Fiesta", "Ford", "Prata");
+// Creating a car object
+let car = new Car("Fiesta", "Ford", "Silver");
